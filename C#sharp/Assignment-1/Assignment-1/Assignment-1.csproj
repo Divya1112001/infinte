@@ -49,7 +49,7 @@
     <Compile Include="Equal.cs" />
     <Compile Include="Equal_or_not.cs" />
     <Compile Include="pass_or_fail.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="temperature.cs" />
   </ItemGroup>
