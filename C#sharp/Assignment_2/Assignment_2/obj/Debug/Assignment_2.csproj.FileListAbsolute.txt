@@ -1,0 +1,7 @@
+C:\divya\infinite\Assignment_2\Assignment_2\bin\Debug\Assignment_2.exe.config
+C:\divya\infinite\Assignment_2\Assignment_2\bin\Debug\Assignment_2.exe
+C:\divya\infinite\Assignment_2\Assignment_2\bin\Debug\Assignment_2.pdb
+C:\divya\infinite\Assignment_2\Assignment_2\obj\Debug\Assignment_2.csprojAssemblyReference.cache
+C:\divya\infinite\Assignment_2\Assignment_2\obj\Debug\Assignment_2.csproj.CoreCompileInputs.cache
+C:\divya\infinite\Assignment_2\Assignment_2\obj\Debug\Assignment_2.exe
+C:\divya\infinite\Assignment_2\Assignment_2\obj\Debug\Assignment_2.pdb

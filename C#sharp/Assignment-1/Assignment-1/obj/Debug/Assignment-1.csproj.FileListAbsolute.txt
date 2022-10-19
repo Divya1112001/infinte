@@ -1,0 +1,6 @@
+C:\divya\infinite\Assignment-1\Assignment-1\obj\Debug\Assignment-1.csproj.CoreCompileInputs.cache
+C:\divya\infinite\Assignment-1\Assignment-1\bin\Debug\Assignment-1.exe.config
+C:\divya\infinite\Assignment-1\Assignment-1\bin\Debug\Assignment-1.exe
+C:\divya\infinite\Assignment-1\Assignment-1\bin\Debug\Assignment-1.pdb
+C:\divya\infinite\Assignment-1\Assignment-1\obj\Debug\Assignment-1.exe
+C:\divya\infinite\Assignment-1\Assignment-1\obj\Debug\Assignment-1.pdb

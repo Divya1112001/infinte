@@ -1,0 +1,7 @@
+C:\divya\infinite\Sample\Sample\bin\Debug\Sample.exe.config
+C:\divya\infinite\Sample\Sample\bin\Debug\Sample.exe
+C:\divya\infinite\Sample\Sample\bin\Debug\Sample.pdb
+C:\divya\infinite\Sample\Sample\obj\Debug\Sample.csprojAssemblyReference.cache
+C:\divya\infinite\Sample\Sample\obj\Debug\Sample.csproj.CoreCompileInputs.cache
+C:\divya\infinite\Sample\Sample\obj\Debug\Sample.exe
+C:\divya\infinite\Sample\Sample\obj\Debug\Sample.pdb
