@@ -1,4 +1,4 @@
-﻿//
+﻿// Create a Class called Doctor with RegnNo, Name, Feescharged as Private members. Allow values to be set and also to display the same.
 using System;
 using System.Collections.Generic;
 using System.Linq;

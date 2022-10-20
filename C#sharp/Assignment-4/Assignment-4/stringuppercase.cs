@@ -1,5 +1,6 @@
 ﻿//Create a Class Program which would be used to accepts two  Strings - FirstName and LastName and
 //call the static method Display() that displays the first name in one line and the LastName in the second line after converting the same to upper case.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace Assignment_4
 {
-  
         class stringuppercase
         {
             public void Display()
@@ -25,7 +25,6 @@ namespace Assignment_4
                 Console.WriteLine("Converted string is: " + str2);
                 Console.Read();
             }
-
             public static void Main(string[] args)
             {
                 stringuppercase p = new stringuppercase();
