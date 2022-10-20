@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-    class Marks
+     class Marks
     {
         public static void Main(string[] args)
         {
