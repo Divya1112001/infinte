@@ -1,4 +1,6 @@
-﻿//Create a Program to count the no. of occurrences of a letter in a given string (for example in a string called “OOPS PROGRAMMING”, O appears 3 times)
+﻿//Create a Program to count the no. of occurrences of a letter in a given string 
+//(for example in a string called “OOPS PROGRAMMING”, O appears 3 times)
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,7 @@
 ﻿// Create a class called Saledetails which has data members like Salesno,  Productno,  Price, dateofsale, Qty, TotalAmount
 //Create a method called Sales() that takes qty, Price details of the object and updates the TotalAmount as Qty* Price
 //Pass the other information like SalesNo, Productno, Price, Qty and Dateof sale through constructor
- //call the show data method to display the values.
+//call the show data method to display the values.
 
 using System;
 using System.Collections.Generic;

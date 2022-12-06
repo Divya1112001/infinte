@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmployeetravelsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dept_tbl">
+          <Key>
+            <PropertyRef Name="Dept_id" />
+          </Key>
+          <Property Name="Dept_id" Type="int" Nullable="false" />
+          <Property Name="Dept_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee_tbl">
+          <Key>
+            <PropertyRef Name="Emp_id" />
+          </Key>
+          <Property Name="Emp_id" Type="int" Nullable="false" />
+          <Property Name="Emp_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Project_id" Type="int" />
+          <Property Name="Dept_id" Type="int" />
+          <Property Name="Emp_designation" Type="varchar" MaxLength="40" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" />
+          <Property Name="DOJ" Type="date" Nullable="false" />
+          <Property Name="Report_manager" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="salary" Type="int" />
+        </EntityType>
+        <EntityType Name="Project_tbl">
+          <Key>
+            <PropertyRef Name="Project_id" />
+          </Key>
+          <Property Name="Project_id" Type="int" Nullable="false" />
+          <Property Name="Projectname" Type="varchar" MaxLength="50" />
+          <Property Name="PSD" Type="date" Nullable="false" />
+          <Property Name="PED" Type="date" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Employeetravelsystem.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="User_Name" Type="varchar" MaxLength="40" />
+          <Property Name="pwd" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <Association Name="FK__Employee___Dept___52593CB8">
+          <End Role="Dept_tbl" Type="Self.Dept_tbl" Multiplicity="0..1" />
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dept_tbl">
+              <PropertyRef Name="Dept_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="Dept_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee___Proje__5165187F">
+          <End Role="Project_tbl" Type="Self.Project_tbl" Multiplicity="0..1" />
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_tbl">
+              <PropertyRef Name="Project_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="Project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmployeetravelsystemModelStoreContainer">
+          <EntitySet Name="Dept_tbl" EntityType="Self.Dept_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_tbl" EntityType="Self.Employee_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_tbl" EntityType="Self.Project_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Users].[User_id] AS [User_id], 
+    [Users].[User_Name] AS [User_Name], 
+    [Users].[pwd] AS [pwd]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Employee___Dept___52593CB8" Association="Self.FK__Employee___Dept___52593CB8">
+            <End Role="Dept_tbl" EntitySet="Dept_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee___Proje__5165187F" Association="Self.FK__Employee___Proje__5165187F">
+            <End Role="Project_tbl" EntitySet="Project_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeetravelsystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dept_tbl">
+          <Key>
+            <PropertyRef Name="Dept_id" />
+          </Key>
+          <Property Name="Dept_id" Type="Int32" Nullable="false" />
+          <Property Name="Dept_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee_tbl" Relationship="Self.FK__Employee___Dept___52593CB8" FromRole="Dept_tbl" ToRole="Employee_tbl" />
+        </EntityType>
+        <EntityType Name="Employee_tbl">
+          <Key>
+            <PropertyRef Name="Emp_id" />
+          </Key>
+          <Property Name="Emp_id" Type="Int32" Nullable="false" />
+          <Property Name="Emp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Project_id" Type="Int32" />
+          <Property Name="Dept_id" Type="Int32" />
+          <Property Name="Emp_designation" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DOJ" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Report_manager" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="salary" Type="Int32" />
+          <NavigationProperty Name="Dept_tbl" Relationship="Self.FK__Employee___Dept___52593CB8" FromRole="Employee_tbl" ToRole="Dept_tbl" />
+          <NavigationProperty Name="Project_tbl" Relationship="Self.FK__Employee___Proje__5165187F" FromRole="Employee_tbl" ToRole="Project_tbl" />
+          <Property Name="status" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Project_tbl">
+          <Key>
+            <PropertyRef Name="Project_id" />
+          </Key>
+          <Property Name="Project_id" Type="Int32" Nullable="false" />
+          <Property Name="Projectname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PSD" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PED" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee_tbl" Relationship="Self.FK__Employee___Proje__5165187F" FromRole="Project_tbl" ToRole="Employee_tbl" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="pwd" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Employee___Dept___52593CB8">
+          <End Role="Dept_tbl" Type="Self.Dept_tbl" Multiplicity="0..1" />
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dept_tbl">
+              <PropertyRef Name="Dept_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="Dept_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee___Proje__5165187F">
+          <End Role="Project_tbl" Type="Self.Project_tbl" Multiplicity="0..1" />
+          <End Role="Employee_tbl" Type="Self.Employee_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_tbl">
+              <PropertyRef Name="Project_id" />
+            </Principal>
+            <Dependent Role="Employee_tbl">
+              <PropertyRef Name="Project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmployeetravelsystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dept_tbl" EntityType="Self.Dept_tbl" />
+          <EntitySet Name="Employee_tbl" EntityType="Self.Employee_tbl" />
+          <EntitySet Name="Project_tbl" EntityType="Self.Project_tbl" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__Employee___Dept___52593CB8" Association="Self.FK__Employee___Dept___52593CB8">
+            <End Role="Dept_tbl" EntitySet="Dept_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee___Proje__5165187F" Association="Self.FK__Employee___Proje__5165187F">
+            <End Role="Project_tbl" EntitySet="Project_tbl" />
+            <End Role="Employee_tbl" EntitySet="Employee_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeetravelsystemModelStoreContainer" CdmEntityContainer="EmployeetravelsystemEntities">
+          <EntitySetMapping Name="Dept_tbl">
+            <EntityTypeMapping TypeName="EmployeetravelsystemModel.Dept_tbl">
+              <MappingFragment StoreEntitySet="Dept_tbl">
+                <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+                <ScalarProperty Name="Dept_name" ColumnName="Dept_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_tbl">
+            <EntityTypeMapping TypeName="EmployeetravelsystemModel.Employee_tbl">
+              <MappingFragment StoreEntitySet="Employee_tbl">
+                <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+                <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+                <ScalarProperty Name="Emp_designation" ColumnName="Emp_designation" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+                <ScalarProperty Name="Report_manager" ColumnName="Report_manager" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_tbl">
+            <EntityTypeMapping TypeName="EmployeetravelsystemModel.Project_tbl">
+              <MappingFragment StoreEntitySet="Project_tbl">
+                <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+                <ScalarProperty Name="Projectname" ColumnName="Projectname" />
+                <ScalarProperty Name="PSD" ColumnName="PSD" />
+                <ScalarProperty Name="PED" ColumnName="PED" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EmployeetravelsystemModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

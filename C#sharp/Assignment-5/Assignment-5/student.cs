@@ -33,7 +33,6 @@ namespace Assignment_5
                     Console.WriteLine("fail");
                 }
                 Console.ReadLine();
-
             }
         }
     }
@@ -93,7 +92,6 @@ namespace Assignment_5
             s.display();
 
         }
-
     }
 }
 
